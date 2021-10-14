@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.7.0;
+pragma solidity ^0.8.0;
 
 contract someContract {
     
@@ -10,11 +10,11 @@ contract someContract {
     uint amount = 0; uint answer = 15;
     
      constructor() public {
-        owner = msg.sender;
+        owner = payable(msg.sender);
     }
     
     function setDest() public {
-        dest = msg.sender;
+        dest = payable(msg.sender);
     }
     
     // Code quality vulnerabilities
@@ -40,6 +40,6 @@ contract someContract {
     
     // Unprotected self-destruct
     function kill() public{
-        selfdestruct(msg.sender);
+        selfdestruct(payable(msg.sender));
     }
 }
