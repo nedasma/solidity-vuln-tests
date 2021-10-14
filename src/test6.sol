@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.7.0;
+pragma solidity ^0.8.0;
 
 contract outOfGas {
 
@@ -10,11 +10,11 @@ contract outOfGas {
 	uint counter = 0;
     
      constructor() public {
-        owner = msg.sender;
+        owner = payable(msg.sender);
     }
     
     function setDest() public {
-        dest = msg.sender;
+        dest = payable(msg.sender);
     }
     
     
