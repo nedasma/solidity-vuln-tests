@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.7.0;
+pragma solidity ^0.8.0;
 
 contract Test {
     
@@ -11,7 +11,7 @@ contract Test {
     event Success(address _from, uint _amount);
    
     constructor() public {
-        owner = msg.sender;
+        owner = payable(msg.sender);
     }
     
     // Dead code vulnerability as functions are not checked by the static analysis tool if they contribute to the final answer
