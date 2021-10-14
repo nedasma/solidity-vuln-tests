@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.7.0;
+pragma solidity ^0.8.0;
 
 contract Booking {
     
@@ -12,7 +12,7 @@ contract Booking {
     event Booked(address _occupant, uint _amount);
    
     constructor() public {
-        owner = msg.sender;
+        owner = payable(msg.sender);
         state = State.Vacant;
     }
     
